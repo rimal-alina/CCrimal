@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>BMI Calculator</h2>
+        <h2>BMI Calculator Alina</h2>
         <input type="text" id="name" placeholder="Enter your name">
         <input type="number" id="weight" placeholder="Enter your weight (kg)">
         <input type="number" id="height" placeholder="Enter your height (m)">
