@@ -22,4 +22,4 @@ jobs:
       
       - name: Deploy to S3
         run: |
-          aws s3 sync . s3://alinabucket-unique-16 --acl public-read --delete
+          aws s3 sync ./BMI Calculator s3://alinabucket-unique-16 --acl public-read --delete
