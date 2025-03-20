@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+     
+
 
 jobs:
   deploy:
@@ -21,9 +23,9 @@ jobs:
           aws-region: eu-central-1  
       
      - name: Deploy BMI Calculator to S3
-        run: |
+        run: 
           aws s3 sync "./BMI Calculator" s3://alinabucket-unique-16/BMI-Calculator --acl public-read --delete
       
       - name: Deploy BMI Rechner to S3
-        run: |
+        run: 
           aws s3 sync "./BMI Rechner" s3://alinabucket-unique-16/BMI-Rechner --acl public-read --delete
