@@ -1,110 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
 
-  <groupId>maven</groupId>
-  <artifactId>bmi</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>bmi</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-  </properties>
+    <groupId>maven</groupId>
+    <artifactId>bmi</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-  <dependencies>
-    <!-- JUnit 5 dependencies for tests -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>5.7.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.7.0</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <name>bmi</name>
+    <url>http://www.example.com</url>
 
-  <build>
-    <plugins>
-      <!-- Surefire plugin for running unit tests -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M5</version>
-        <configuration>
-          <includes>
-            <include>**/*Test.java</include> <!-- Unit test pattern -->
-          </includes>
-        </configuration>
-      </plugin>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
-      <!-- Failsafe plugin for running integration tests -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.0.0-M5</version>
-        <configuration>
-          <includes>
-            <include>**/*IT.java</include> <!-- Integration test pattern -->
-          </includes>
-        </configuration>
-      </plugin>
+    <dependencies>
+        <!-- Updated JUnit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-      <!-- Maven Compiler plugin -->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-      </plugin>
+    <build>
+        <plugins>
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+            </plugin>
 
-      <!-- Maven Clean plugin -->
-      <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>3.1.0</version>
-      </plugin>
+            <!-- Surefire Plugin for Unit Tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include> <!-- Runs Unit Tests -->
+                    </includes>
+                </configuration>
+            </plugin>
 
-      <!-- Maven Resources plugin -->
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.0.2</version>
-      </plugin>
+            <!-- Failsafe Plugin for Integration Tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <executions>
+                    <execution>
+                        <id>integration-tests</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/*IT.java</include> <!-- Runs Integration Tests -->
+                    </includes>
+                </configuration>
+            </plugin>
 
-      <!-- Maven Jar plugin -->
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.0.2</version>
-      </plugin>
+            <!-- Other Maven Plugins -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
 
-      <!-- Maven Install plugin -->
-      <plugin>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>2.5.2</version>
-      </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
 
-      <!-- Maven Deploy plugin -->
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.8.2</version>
-      </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
 
-      <!-- Maven Site plugin -->
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.7.1</version>
-      </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+            </plugin>
 
-      <!-- Maven Project Info Reports plugin -->
-      <plugin>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.0.0</version>
-      </plugin>
-    </plugins>
-  </build>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
