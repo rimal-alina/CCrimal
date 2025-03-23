@@ -23,10 +23,10 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn clean compile
+        run: mvn mvn -f src/pom.xml clean compile
 
       - name: Run Unit Tests
-        run: mvn test
+        run: mvn -f src/pom.xml test
 
       - name: Run Integration Tests
-        run: mvn verify -DskipUnitTests
+        run: mvn -f src/pom.xml verify -DskipUnitTests
