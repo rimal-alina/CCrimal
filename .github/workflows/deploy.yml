@@ -24,10 +24,8 @@ jobs:
       
       - name: Deploy BMI webseite to S3
         run: 
-          aws s3 sync "./BMI webseite" "s3://alinabucket-unique-16/BMI webseite" --acl public-read --delete
+          aws s3 sync ./ "s3://alinabucket-unique-16/" --acl public-read --delete
       
-      - name: Deploy source code to S3
-        run: 
-          aws s3 sync "./src" "s3://alinabucket-unique-16/src" --acl public-read --delete
+     
 
 
