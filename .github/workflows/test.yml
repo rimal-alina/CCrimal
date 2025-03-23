@@ -30,3 +30,9 @@ jobs:
 
       - name: Run Integration Tests
         run: mvn -f src/pom.xml verify -DskipUnitTests
+
+      - name: Upload Test Logs as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-log
+          path: result.log
