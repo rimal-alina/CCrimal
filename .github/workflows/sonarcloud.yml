@@ -21,7 +21,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
+          
+      - name: Skip SonarCloud Analysis if Automatic Analysis is enabled
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "Skipping SonarCloud Analysis due to Automatic Analysis being enabled"
+          
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
