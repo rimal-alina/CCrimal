@@ -22,10 +22,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1  
       
-      - name: Deploy BMI Calculator to S3
+      - name: Deploy BMI webseite to S3
         run: 
-          aws s3 sync "./BMI webseite" s3://alinabucket-unique-16/BMI-Calculator --acl public-read --delete
+          aws s3 sync "./BMI webseite" s3://alinabucket-unique-16/BMI webseite --acl public-read --delete
       
       - name: Deploy BMI Rechner to S3
         run: 
-          aws s3 sync "./BMI Rechner" s3://alinabucket-unique-16/BMI-Rechner --acl public-read --delete
+          aws s3 sync "./BMI Rechner" s3://alinabucket-unique-16/BMI Rechner --acl public-read --delete
