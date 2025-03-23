@@ -18,6 +18,11 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+   <properties>
+    <sonar.projectKey>rimal-alina_CCrimal</sonar.projectKey>
+    <sonar.organization>rimal-alina</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
 
     <dependencies>
         <!-- Updated JUnit -->
