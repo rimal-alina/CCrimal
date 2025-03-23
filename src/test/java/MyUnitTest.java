@@ -17,20 +17,22 @@ public class MyUnitTest
     public void testBMIUnderweight() {
         double weight = 50;  
         double height = 1.75; 
-        double expectedBMI = 16.33; // expected BMI value
+        double expectedBMI = 16.33; 
         double result = BMICalculator.calculateBMI(weight, height);
-        assertEquals(expectedBMI, result, 0.01); // Use delta to handle floating-point comparison
+        assertEquals(expectedBMI, result, 0.01); 
     }
 
 
     // Test 2: BMI category check for obese
     @Test
     public void testBMICategoryObese() {
-        double bmi = 32.65; // BMI value for obese
-        String expectedCategory = "Obese"; // Expected category
+        double bmi = 32.65; 
+        String expectedCategory = "Obese"; 
         String result = BMICalculator.getBMICategory(bmi);
-        assertEquals(expectedCategory,result); // Check if the category matches
-    }
+        assertEquals(expectedCategory,result); 
 
+    }
 }
+
+
 
