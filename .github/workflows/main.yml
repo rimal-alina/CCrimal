@@ -24,7 +24,7 @@ jobs:
       
       - name: Deploy BMI Calculator to S3
         run: 
-          aws s3 sync "./BMI Calculator" s3://alinabucket-unique-16/BMI-Calculator --acl public-read --delete
+          aws s3 sync "./BMI webseite" s3://alinabucket-unique-16/BMI-Calculator --acl public-read --delete
       
       - name: Deploy BMI Rechner to S3
         run: 
