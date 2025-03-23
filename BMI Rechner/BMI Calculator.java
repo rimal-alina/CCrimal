@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class BMICalculatorGUI {
     public static void main(String[] args) {
         // Create the frame
-        JFrame frame = new JFrame("BMI Calculator Alina");
+        JFrame frame = new JFrame("BMI Rechner");
         frame.setSize(350, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridLayout(5, 2));
